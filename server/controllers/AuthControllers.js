@@ -23,7 +23,11 @@ const signup = async (req, res) => {
     const token = jwt.sign({ id: newUser._id }, process.env.JWTSC, {
       expiresIn: "30d",
     });
-    res.cookie("auth_token", token);
+      res.cookie("auth_token", token, {
+      httpOnly: true,
+      secure: true, // Must be true for HTTPS
+      sameSite: "none",
+    });
     return res.status(201).json({ message: "Account Created successfully" });
   } catch (error) {
     console.log(error);
@@ -47,7 +51,11 @@ const login = async (req, res) => {
     const token = jwt.sign({ id: checkUser._id }, process.env.JWTSC, {
       expiresIn: "30d",
     });
-    res.cookie("auth_token", token);
+      res.cookie("auth_token", token, {
+      httpOnly: true,
+      secure: true, // Must be true for HTTPS
+      sameSite: "none",
+    });
     return res.status(201).json({ message: "Account Created successfully" });
   } catch (error) {
     console.log(error);
