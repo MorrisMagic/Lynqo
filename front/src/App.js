@@ -10,7 +10,7 @@ import axios from "axios";
 import { AuthContext } from "./context/AuthContext";
 import ProfilePage from "./pages/ProfilePage";
 
-axios.defaults.baseURL = "http://localhost:5000";
+axios.defaults.baseURL = "https://lynqo-nllsecbpj-youssefhabbachixxxs-projects.vercel.app/";
 axios.defaults.withCredentials = true;
 function App() {
   const { Auth, setAuth } = useContext(AuthContext);
