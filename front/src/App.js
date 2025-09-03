@@ -10,7 +10,7 @@ import axios from "axios";
 import { AuthContext } from "./context/AuthContext";
 import ProfilePage from "./pages/ProfilePage";
 
-axios.defaults.baseURL = "https://lynqo.onrender.com/";
+axios.defaults.baseURL = "https://lynqo-seven.vercel.app";
 axios.defaults.withCredentials = true;
 function App() {
   const { Auth, setAuth } = useContext(AuthContext);
